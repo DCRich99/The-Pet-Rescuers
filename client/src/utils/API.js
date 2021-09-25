@@ -54,7 +54,7 @@ export const deletePet = (petId, token) => {
 export const findPetSearch = (query) => {
   return fetch(`https://api.petfinder.com/v2/animals?type=${query}&page=2`, {
     headers: {
-	authorization: `Bearer {Token Here}`,
+      authorization: `Bearer `, // Token insert here. Ensure token is hidden. Fetch chain will be implemented.
     },
   });
 };

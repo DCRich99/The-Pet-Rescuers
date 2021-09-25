@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Navbar, Nav, Container, Modal, Tab } from "react-bootstrap";
+import SignUpForm from "./SignupForm";
+import LoginForm from "./LoginForm";
 
-const NavigationBar = () => {
+import Auth from "../utils/auth";
+
+const AppNavbar = () => {
+  // set modal display state
   const [showModal, setShowModal] = useState(false);
 
   return (
@@ -12,47 +17,70 @@ const NavigationBar = () => {
           <Navbar.Brand as={Link} to="/">
             The Pet Rescuers
           </Navbar.Brand>
-
+          <Navbar.Toggle aria-controls="navbar" />
           <Navbar.Collapse id="navbar">
-            <Nav className="ml-auto">
+            <Nav>
               <Nav.Link as={Link} to="/">
-                Search For Animals
+                <button className="navBtn">Search Animals</button>
               </Nav.Link>
-              {/* If the user is logged in, display all saved pets/ animals */}
-              {/**/} : (
-              <Nav.Link onClick={() => setShowModal(true)}>
-                Login/Sign Up
+              <Nav.Link as={Link} to="/donate">
+                <button className="navBtn donate">Donate</button>
               </Nav.Link>
-              ) <Nav.Link>Donate</Nav.Link>
+              {/* if user is logged in show saved animals and logout */}
+              {Auth.loggedIn() ? (
+                <>
+                  <Nav.Link as={Link} to="/saved">
+                    <button className="navBtn yourAnimals">
+                      Saved Animals
+                    </button>
+                  </Nav.Link>
+                  <Nav.Link onClick={Auth.logout} variant="danger">
+                    <button className="text-light logoutBtn"> Logout </button>
+                  </Nav.Link>
+                </>
+              ) : (
+                <Nav.Link onClick={() => setShowModal(true)}>
+                  <button className="navBtn">Login/Sign Up</button>
+                </Nav.Link>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      {/* Set modal data */}
+      {/* set modal data up */}
       <Modal
         size="lg"
         show={showModal}
         onHide={() => setShowModal(false)}
         aria-labelledby="signup-modal"
+        className="modalBackground"
       >
-        {/* Tab container to do either signup or login*/}
-        <Tab.Container defaultActiveKey="login">
-          <Modal.Header closeButton>
-            <Modal.Title id="signup-modal">
-              <Nav variant="tabs">
-                <Nav.Item>
-                  <Nav.Link eventKey="#">Login</Nav.Link>
+        {/* tab container to do either signup or login component */}
+        <Tab.Container defaultActiveKey="login" className="modalColor">
+          <Modal.Header closeButton variant="danger" className="closeBar">
+            <Modal.Title id="signup-modal" className="modalColor">
+              <Nav variant="pills">
+                <Nav.Item className="modalColor">
+                  <Nav.Link eventKey="login" className="modalColor loginBtn">
+                    Login
+                  </Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link eventKey="#">Sign Up</Nav.Link>
+                  <Nav.Link eventKey="signup" className="modalColor signupBtn">
+                    Sign Up
+                  </Nav.Link>
                 </Nav.Item>
               </Nav>
             </Modal.Title>
           </Modal.Header>
-          <Modal.Body>
+          <Modal.Body className="modalColor text-light">
             <Tab.Content>
-              <Tab.Pane eventKey="login">{/* Login Form Here */}</Tab.Pane>
-              <Tab.Pane eventKey="signup">{/* Signup Form Here */}</Tab.Pane>
+              <Tab.Pane eventKey="login">
+                <LoginForm handleModalClose={() => setShowModal(false)} />
+              </Tab.Pane>
+              <Tab.Pane eventKey="signup">
+                <SignUpForm handleModalClose={() => setShowModal(false)} />
+              </Tab.Pane>
             </Tab.Content>
           </Modal.Body>
         </Tab.Container>
@@ -61,4 +89,4 @@ const NavigationBar = () => {
   );
 };
 
-export default NavigationBar;
+export default AppNavbar;

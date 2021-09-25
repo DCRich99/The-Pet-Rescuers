@@ -21,6 +21,7 @@ module.exports = {
 
     res.json(foundUser);
   },
+  // create a user, sign a token, and send it back (to client/src/components/SignUpForm.js)
   async createUser({ body }, res) {
     const user = await User.create(body);
 
@@ -30,7 +31,8 @@ module.exports = {
     const token = signToken(user);
     res.json({ token, user });
   },
-  // Destructured req.body
+  // login a user, sign a token, and send it back (to client/src/components/LoginForm.js)
+  // {body} is destructured req.body
   async login({ body }, res) {
     const user = await User.findOne({
       $or: [{ username: body.username }, { email: body.email }],
@@ -46,5 +48,35 @@ module.exports = {
     }
     const token = signToken(user);
     res.json({ token, user });
+  },
+
+  // user comes from `req.user` created in the auth middleware function
+  async savePet({ user, body }, res) {
+    console.log(user);
+    try {
+      const updatedUser = await User.findOneAndUpdate(
+        { _id: user._id },
+        { $addToSet: { savedPets: body } },
+        { new: true, runValidators: true }
+      );
+      return res.json(updatedUser);
+    } catch (err) {
+      console.log(err);
+      return res.status(400).json(err);
+    }
+  },
+
+  async deletePet({ user, params }, res) {
+    const updatedUser = await User.findOneAndUpdate(
+      { _id: user._id },
+      { $pull: { savedPets: { petId: params.petId } } },
+      { new: true }
+    );
+    if (!updatedUser) {
+      return res
+        .status(404)
+        .json({ message: "Couldn't find user with this id!" });
+    }
+    return res.json(updatedUser);
   },
 };

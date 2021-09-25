@@ -10,3 +10,517 @@ h5,
 h6 {
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.small {
+  font-weight: 300;
+  font-style: italic;
+}
+
+.navBtn {
+  background-color: #e9ecef;
+  opacity: 1;
+  color: black;
+  border-radius: 0.3rem;
+  margin-left: 215px;
+  text-align: center;
+}
+.navBtn:hover {
+  background-color: black;
+  color: #e9ecef;
+}
+.jumbo {
+  background-repeat: no-repeat;
+  background-size: 2000px 300px;
+  background-position: center;
+  height: 300px;
+  border-bottom: 3px solid black;
+}
+.head {
+  color: blu;
+  font-weight: bold;
+}
+
+h2 {
+  opacity: 0;
+}
+.donate {
+  width: 300px;
+  font-weight: bold;
+  background-color: yellow;
+  border-color: yellow;
+  color: #333;
+  box-shadow: 0 2px 0 0 #bf9b14;
+  margin-right: 70px;
+}
+.donate:hover {
+  background-color: greenyellow;
+  border-color: greenyellow;
+  color: #333;
+  box-shadow: 0 2px 0 0 greenyellow;
+}
+.cards {
+  border: solid 2px black;
+}
+.cardImg {
+  border: 5px solid black;
+}
+.cardSoloImg {
+  border-bottom: 5px solid black;
+  height: 300px;
+}
+.cardBody {
+  background-color: #e9ecef;
+  height: 150px;
+}
+
+.modalBackground {
+  background-image: url("https://images.unsplash.com/photo-1507146426996-ef05306b995a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGRvZyUyMHByb2ZpbGUlMjBwaWN0dXJlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.modalColor {
+  background-color: black;
+  color: black;
+}
+
+.closeBar {
+  background-color: black;
+}
+.loginBtn {
+  color: white;
+}
+.loginBtn:hover {
+  background-color: skyblue;
+  color: white;
+}
+.signupBtn {
+  color: white;
+}
+.signupBtn:hover {
+  background-color: skyblue;
+  color: white;
+}
+.close {
+  color: red;
+  font-weight: bold;
+  border: 2px solid red;
+}
+.close:hover {
+  color: red;
+}
+.logoutBtn {
+  margin-left: 16rem;
+  background-color: red;
+  opacity: 1;
+  border-radius: 0.3rem;
+}
+.cardImg2 {
+  border: 5px solid black;
+}
+.cardBody2 {
+  border-top: 5px solid black;
+}
+.savedH1 {
+  margin-top: 50px;
+}
+.jumbo2 {
+  background-image: url("https://cdn.aarp.net/content/dam/aarp/home-and-family/personal-technology/2018/05/1140-pets-vs-technology.imgcache.rev.web.1053.600.jpg");
+  background-size: 2000px 400px;
+  background-repeat: no-repeat;
+}
+.logoutBtn:hover {
+  margin-left: 16rem;
+  background-color: darkred;
+  opacity: 1;
+  border-radius: 0.3rem;
+}
+.yourAnimals {
+  margin-left: 135px;
+}
+.saveBtn {
+  width: 40px;
+  height: 40px;
+  background-image: url(https://d339b5nop2tkmp.cloudfront.net/packs/media/icons/favourite-d186382a.png);
+  background-size: 2900%;
+  background-position: 0;
+  background-repeat: no-repeat;
+  background-color: red;
+  outline: none;
+  border-radius: 100%;
+  border: none;
+  cursor: pointer;
+}
+.saveBtn:hover {
+  background-color: white;
+}
+.saveBtn:focus {
+  background-color: white;
+}
+.glow-on-hover {
+  width: 220px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+}
+
+.glow-on-hover:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.glow-on-hover:active {
+  color: #000;
+}
+
+.glow-on-hover:active:after {
+  background: transparent;
+}
+
+.glow-on-hover:hover:before {
+  opacity: 1;
+}
+
+.glow-on-hover:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+.search {
+  background-color: rgba(0, 0, 0, 0);
+  padding: 50px 30px 50px 100px;
+  display: flex;
+  width: 100%;
+}
+.searchInput {
+  border: 3px solid black;
+}
+.searchInput:focus {
+  border: 3px solid black;
+}
+
+html {
+  height: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body,
+nav {
+  min-height: 100%;
+  position: relative;
+  padding-bottom: 3rem;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+  background: linear-gradient(
+      170deg,
+      rgba(49, 57, 73, 0.8) 20%,
+      rgba(49, 57, 73, 0.5) 20%,
+      rgba(49, 57, 73, 0.5) 35%,
+      rgba(41, 48, 61, 0.6) 35%,
+      rgba(41, 48, 61, 0.8) 45%,
+      rgba(31, 36, 46, 0.5) 45%,
+      rgba(31, 36, 46, 0.8) 75%,
+      rgba(49, 57, 73, 0.5) 75%
+    ),
+    linear-gradient(
+        45deg,
+        rgba(20, 24, 31, 0.8) 0%,
+        rgba(41, 48, 61, 0.8) 50%,
+        rgba(82, 95, 122, 0.8) 50%,
+        rgba(133, 146, 173, 0.8) 100%
+      )
+      #313949;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  border-bottom: solid 5px black;
+}
+.donateImg {
+  text-align: center;
+  margin-top: 50px;
+  width: 500px;
+  height: 500px;
+  border: solid 3px black;
+}
+@font-face {
+  font-family: Clip;
+  src: url("https://acupoftee.github.io/fonts/Clip.ttf");
+}
+
+.jumbo3 {
+  background-color: #141114;
+  background-image: linear-gradient(335deg, black 23px, transparent 23px),
+    linear-gradient(155deg, black 23px, transparent 23px),
+    linear-gradient(335deg, black 23px, transparent 23px),
+    linear-gradient(155deg, black 23px, transparent 23px);
+  background-size: 58px 58px;
+}
+.sign {
+  margin: 80px 550px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 50%;
+  background-image: radial-gradient(
+    ellipse 50% 35% at 50% 50%,
+    #6b1839,
+    transparent
+  );
+  transform: translate(-50%, -50%);
+  letter-spacing: 2;
+  left: 50%;
+  top: 50%;
+  font-family: "Clip";
+  text-transform: uppercase;
+  font-size: 6em;
+  color: #ffe6ff;
+  text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+    -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
+    0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
+  animation: shine 2s forwards, flicker 3s infinite;
+}
+
+@keyframes blink {
+  0%,
+  22%,
+  36%,
+  75% {
+    color: #ffe6ff;
+    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+      -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
+      0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
+  }
+  28%,
+  33% {
+    color: #ff65bd;
+    text-shadow: none;
+  }
+  82%,
+  97% {
+    color: #ff2483;
+    text-shadow: none;
+  }
+}
+
+.flicker {
+  animation: shine 2s forwards, blink 3s 2s infinite;
+}
+
+.fast-flicker {
+  animation: shine 2s forwards, blink 10s 1s infinite;
+}
+
+@keyframes shine {
+  0% {
+    color: #6b1839;
+    text-shadow: none;
+  }
+  100% {
+    color: #ffe6ff;
+    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+      -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
+      0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
+  }
+}
+
+@keyframes flicker {
+  from {
+    opacity: 1;
+  }
+
+  4% {
+    opacity: 0.9;
+  }
+
+  6% {
+    opacity: 0.85;
+  }
+
+  8% {
+    opacity: 0.95;
+  }
+
+  10% {
+    opacity: 0.9;
+  }
+
+  11% {
+    opacity: 0.922;
+  }
+
+  12% {
+    opacity: 0.9;
+  }
+
+  14% {
+    opacity: 0.95;
+  }
+
+  16% {
+    opacity: 0.98;
+  }
+
+  17% {
+    opacity: 0.9;
+  }
+
+  19% {
+    opacity: 0.93;
+  }
+
+  20% {
+    opacity: 0.99;
+  }
+
+  24% {
+    opacity: 1;
+  }
+
+  26% {
+    opacity: 0.94;
+  }
+
+  28% {
+    opacity: 0.98;
+  }
+
+  37% {
+    opacity: 0.93;
+  }
+
+  38% {
+    opacity: 0.5;
+  }
+
+  39% {
+    opacity: 0.96;
+  }
+
+  42% {
+    opacity: 1;
+  }
+
+  44% {
+    opacity: 0.97;
+  }
+
+  46% {
+    opacity: 0.94;
+  }
+
+  56% {
+    opacity: 0.9;
+  }
+
+  58% {
+    opacity: 0.9;
+  }
+
+  60% {
+    opacity: 0.99;
+  }
+
+  68% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 0.9;
+  }
+
+  72% {
+    opacity: 0.95;
+  }
+
+  93% {
+    opacity: 0.93;
+  }
+
+  95% {
+    opacity: 0.95;
+  }
+
+  97% {
+    opacity: 0.93;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+.donateImg {
+  float: left;
+  margin-left: 50px;
+  width: 700px;
+  display: block;
+  padding: 0px 0px 0;
+}
+.donateHeader {
+  display: block;
+  overflow: auto;
+  padding: 40px 40px 0;
+  margin-top: 50px;
+  float: right;
+  margin-right: 0px;
+  width: 50%;
+}
+.dParagraph {
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: -0.014em;
+  margin: 1.3em 0;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}

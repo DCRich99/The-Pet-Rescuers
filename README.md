@@ -66,7 +66,7 @@ Then the user is logged out of the site and presented with a menu with the optio
 2. npm install
 3. npm start
 4. Direct to the local live version to view: http://localhost:3000/
-5. Search terms
+5. Search the following terms for responses: Dog, Cat, Rabbit, Bird, Horse
 
 
 # License

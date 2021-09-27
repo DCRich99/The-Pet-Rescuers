@@ -1,3 +1,6 @@
+let petToken;
+let expires;
+
 // route to get logged in user's info (needs the token)
 export const getMe = (token) => {
   return fetch("/api/users/me", {
@@ -50,11 +53,38 @@ export const deletePet = (petId, token) => {
   });
 };
 
+const getAuth = function () {
+  console.log("Inside getAuth");
+  return fetch("https://api.petfinder.com/v2/oauth2/token", {
+    method: "POST",
+    body: "grant_type=client_credentials&client_id=fDLyZMIt3QxNOiFOmsmbBmyj25vnJh6zT0D2cCELxUNVO6yzIE&client_secret=qomZFgNLnDj5L8Hqllp13zRAjSjSbRAEwEUqamHm",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      petToken = data.access_token;
+      expires = new Date().getTime() + data.expires_in * 1000;
+      return petToken;
+    })
+    .catch((error) => {
+      console.log("No bueno", error);
+    });
+};
+
 // make a search to petfinder api
-export const findPetSearch = (query) => {
+export const findPetSearch = async (query) => {
+  if (!petToken) {
+    petToken = await getAuth();
+  }
+  console.log("petToken After oAuth", petToken);
+  if (expires - new Date().getTime() < 0) getAuth();
   return fetch(`https://api.petfinder.com/v2/animals?type=${query}&page=2`, {
     headers: {
-	authorization: `Bearer {Token Here}`, //Add token from server - Use a chain fetch - Currently working on -Tanner 
+      authorization: `Bearer ` + petToken,
     },
   });
 };

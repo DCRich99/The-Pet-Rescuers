@@ -7,7 +7,7 @@ A web application that will be used to connect potential pet adopters with organ
 
 # Table of Contents
 
-- [Technologies Used](#Technologies-used)
+- [Technologies Used](#Technologies-Used)
 - [Links](#Links)
 - [Instructions](#Instructions)
 - [Contributors](#Contributors)
@@ -29,7 +29,7 @@ A web application that will be used to connect potential pet adopters with organ
 
 # Links
 
-[View Live on Heroku]()
+[View Live on Heroku](https://the-pet-rescuers.herokuapp.com/)
 
 # Instructions
 

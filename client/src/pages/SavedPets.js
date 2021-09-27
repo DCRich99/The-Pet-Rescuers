@@ -10,7 +10,6 @@ import { useQuery, useMutation } from "@apollo/react-hooks";
 import Auth from "../utils/auth";
 import { removePetId } from "../utils/localStorage";
 import { GET_ME } from "../utils/queries";
-import { LIST_PETS } from "../utils/queries";
 import { REMOVE_PET } from "../utils/mutations";
 
 const SavedPets = () => {
